@@ -1,0 +1,225 @@
+html::-webkit-scrollbar {
+  width: 6px;
+}
+
+html::-webkit-scrollbar-track {
+  background: black;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 5px;
+}
+html{
+  scroll-behavior: smooth;
+}
+body {
+  overflow-x: hidden;
+}
+
+/*---------------------------- HOVER ANIMATION FOR NAV LINKS------------------------------------ */
+.navbarListItems {
+  position: relative;
+  width: fit-content;
+  font-weight: 700;
+  border-radius: 3px;
+  padding: 0px 5px;
+  color: white;
+  overflow: hidden;
+  background: linear-gradient(to left, #c5ba22, #c5ba22 49%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: 0% 100%;
+  transition: background-position 0.8s ease;
+  text-decoration: none;
+
+}
+
+.navbarListItems:hover {
+  background-position: 100% 0%;
+  color: black;
+}
+
+
+/*----------------------- HAMBERGER MENU TRANSITION ------------------------------*/
+
+.navbarMenuIcon {
+  transform: scale(1);
+  transition: transform 0.2s linear;
+}
+
+.navbarMenuIcon:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s linear;
+}
+
+.topLine,
+.bottomLine {
+  transform-origin: center;
+  transition: transform 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.middleLine {
+  transform-origin: center;
+  transition: opacity 1s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.navbarMenuIconActive {
+  .topLine {
+    transform-origin: center;
+    transform: translateY(12px) rotate(-45deg);
+    transition: transform 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+  }
+
+  .bottomLine {
+    transform-origin: center;
+    transform: translateY(-12px) rotate(45deg);
+    transition: transform 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    ;
+
+  }
+
+  .middleLine {
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    ;
+
+  }
+}
+
+
+
+/* -------------------------------- MOBILE NAVBAR ANIMATION ---------------------------- */
+
+.mobileNavbarLinksUl {
+  transform: translateY(-100%);
+  transition: transform 0.4s linear;
+}
+
+.mobileNavbarLinksUlActive {
+  transform: translateY(0);
+  transition: transform 0.4s linear;
+
+}
+
+
+
+/* -------------------------------------DOWNLOAD BUTTON HOVER------------------------------------------------- */
+
+.downloadResumeBtn,
+.takeALookBtn {
+  background-color: #c5ba22;
+  background: linear-gradient(to right, white, white 50%, #c5ba22 50%);
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 0.3s linear;
+}
+
+.downloadResumeBtn:hover,
+.takeALookBtn:hover {
+  background-position: 0 100%;
+}
+
+.downloadResumeBtn:active {
+  .downloadResumeBtnImg {
+    animation: shakeDownloadIcon 0.1s ease;
+  }
+}
+
+.takeALookBtn:active {
+  img {
+    animation: shakeDownloadIcon 0.1s ease;
+
+  }
+}
+
+@keyframes shakeDownloadIcon {
+
+  0%,
+  100% {
+    transform: rotateZ(0deg);
+  }
+
+  40% {
+    transform: rotateZ(-10deg) translateX(-5px);
+  }
+
+  80% {
+    transform: rotateZ(10deg) translateX(5px);
+
+  }
+}
+/* -------------My Image ---------------------- */
+.myImage{
+  border-radius: 62% 38% 38% 62% / 33% 27% 73% 67% ;
+}
+
+.myImageDiv {
+  perspective: 600px;
+  perspective-origin: center;
+}
+
+/* ------------ABOUT SOCIAL ICONS----------- */
+.aboutSocialIconsDiv, .takeALookGithub{
+  transition: transform 0.5s cubic-bezier(0.4, 0.84, 0.44, 1);
+}
+.aboutSocialIconsDiv:hover,
+.takeALookGithub:hover {
+  transform: rotateZ(360deg);
+  transition: transform 0.5s cubic-bezier(0.4, 0.84, 0.44, 1);
+}
+
+.aboutSocialIconsDiv:active,
+.takeALookGithub:active {
+  animation: shakeDownloadIcon 0.1s ease;
+}
+
+
+/* ---------------------- SKILLS DIV -------------------------- */
+.skillsDiv {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 40px;
+}
+
+
+/*  ------------------ Skills Card ------------------- */
+
+.skillCard {
+  transition: transform 0.4s ease;
+}
+
+.skillCard:hover{
+  transform: scale(1.07);
+  transition: transform 0.4s ease;
+}
+
+
+/* ------------------Project Image--------------------- */
+
+.projectImageDiv {
+  perspective: 600px;
+  perspective-origin: center;
+}
+
+.projectImageDiv img {
+  transition: box-shadow 0.4s ease;
+  
+}
+.projectImageDiv img:hover{
+  transition: box-shadow 0.4s ease;
+}
+
+/* ---------------- EDUCATION CARD ------------------ */
+
+
+.educationCard{
+  transition: transform 0.4s linear;
+  z-index: 2;
+}
+
+.educationCard:hover{
+  transform: scale(1.2);
+  transition: transform 0.4s linear;
+  z-index: 3;
+}
