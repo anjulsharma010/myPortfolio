@@ -9,7 +9,7 @@ const educationArray = [
     {
         qualification: "Bachelor of Technology (B-tech)",
         year: "2019-2023",
-        grade: "GPA - 7.34",
+        grade: "CGPA - 7.34",
         institution: "Institute of Technology and Management, Gwalior",
         image: bcaImg
     },
